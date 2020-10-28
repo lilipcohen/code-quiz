@@ -1,14 +1,15 @@
-var container = document.getElementById("quiz-container");
+var qContainer = document.getElementById("quiz-container");
 var quizIntro = document.getElementById("quiz-intro");
-var start = document.getElementById("start");
-var quiz = document.getElementById("quiz");
-var question = document.getElementById("questions");
+var startBtn = document.getElementById("start");
+var quizContent = document.getElementById("quiz");
+var quizQuestions = document.getElementById("questions");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var timeEl = document.getElementById("timer");
 var scoreDiv = document.getElementById("score");
 
+//My questions for the quiz
 var myQuestions = [
 	{
 		question: "What does HTML stand for?",
@@ -57,26 +58,23 @@ var myQuestions = [
 	}
 ];
 
-start.addEventListener("click", function() {
-        
-}
-
+//Variables for time and score
 var secondsLeft = 30;
 var correct = 0;
 
-function setTime() {
-    var timerInterval = setInterval(function() {
-      secondsLeft--;
-      timeEl.textContent = secondsLeft;
-  
-      if(secondsLeft === 0) {
-        clearInterval(timerInterval);
-        sendMessage();
-      }
-  
-    }, 1000);
-  }
-
-var renderQuestions = function() {
-
+//When click start, time will start
+startBtn.addEventListener("click", function() {
+    function setTime() {
+        var timerInterval = setInterval(function() {
+          secondsLeft--;
+          timeEl.textContent = secondsLeft;
+      
+          if(secondsLeft === 0) {
+            clearInterval(timerInterval);
+            
+          }
+      
+        }, 1000);
+    }
+    setTime();
 }
