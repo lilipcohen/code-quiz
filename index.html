@@ -13,18 +13,22 @@
             <p>In this quiz you will be asked five questions. You will be timed!
                 If the timer hits 0 before you finish, it is game over. Hit start
                 to begin and good luck!
-                <button type="button">start</button>
+                <button id="start" type="button">start</button>
             </p>
         </div>
-        <div id="timer">
-            <div id="questions">
-
+        <div id="quiz">
+            <div id="timer">
+                <div id="questions">
+                    <div class="choice" id="A" onclick="checkAnswer('A')"></div>
+                    <div class="choice" id="B" onclick="checkAnswer('B')"></div>
+                    <div class="choice" id="C" onclick="checkAnswer('C')"></div>
          
-                <button id="submit">Get Results</button>
+                    <button id="submit">Get Results</button>
+                </div>
             </div>
-        </div>
-        <div id="results">
+            <div id="score">
 
+            </div>
         </div>
     </main>
     <script src="Assets/javascript/script.js"></script>
