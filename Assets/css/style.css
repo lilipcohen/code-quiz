@@ -9,3 +9,7 @@
     border-width: 10px;
     position: relative;
 }
+
+.hide {
+    display: inline;
+}

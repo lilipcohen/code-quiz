@@ -8,17 +8,17 @@
 </head>
 <body>
     <main class="quiz-container">
-        <div id="quiz-intro">
-            <h1>Hello! Let's take a coding quiz!</h1>
-            <p>In this quiz you will be asked five questions. You will be timed!
-                If the timer hits 0 before you finish, it is game over. Hit start
-                to begin and good luck!
-                <button id="start" type="button">start</button>
-            </p>
-        </div>
         <div id="quiz">
             <div id="timer">
-                <div id="questions">
+                <div id="quiz-intro">
+                    <h1>Hello! Let's take a coding quiz!</h1>
+                    <p>In this quiz you will be asked five questions. You will be timed!
+                        If the timer hits 0 before you finish, it is game over. Hit start
+                        to begin and good luck!
+                        <button id="start" type="button">start</button>
+                    </p>
+                </div>
+                <div class ="questions hide">
                     <div class="choice" id="A" onclick="checkAnswer('A')"></div>
                     <div class="choice" id="B" onclick="checkAnswer('B')"></div>
                     <div class="choice" id="C" onclick="checkAnswer('C')"></div>

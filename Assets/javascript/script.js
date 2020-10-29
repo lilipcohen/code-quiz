@@ -2,7 +2,7 @@ var qContainer = document.getElementById("quiz-container");
 var quizIntro = document.getElementById("quiz-intro");
 var startBtn = document.getElementById("start");
 var quizContent = document.getElementById("quiz");
-var quizQuestions = document.getElementById("questions");
+var quizQuestions = document.getElementById(".questions");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
@@ -63,18 +63,28 @@ var secondsLeft = 30;
 var correct = 0;
 
 //When click start, time will start
-startBtn.addEventListener("click", function() {
-    function setTime() {
-        var timerInterval = setInterval(function() {
-          secondsLeft--;
-          timeEl.textContent = secondsLeft;
+function setTime() {
+    var timerInterval = setInterval(function() {
+        secondsLeft--;
+        timeEl.textContent = secondsLeft;
       
-          if(secondsLeft === 0) {
+        if(secondsLeft === 0) {
             clearInterval(timerInterval);
             
-          }
-      
-        }, 1000);
-    }
-    setTime();
+        }
+        console.log(timerInterval);
+    }, 1000);
 }
+
+function startQuiz() {
+    setTime();
+    for (var i = 0; i < myQuestions.length; i++) {
+        myQuestions[i];
+    
+    }
+}
+
+startBtn.addEventListener("click", function() {
+   startQuiz();
+   
+});
