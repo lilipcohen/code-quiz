@@ -2,7 +2,7 @@ var qContainer = document.getElementById("quiz-container");
 var quizIntro = document.getElementById("quiz-intro");
 var startBtn = document.getElementById("start");
 var quizContent = document.getElementById("quiz");
-var quizQuestions = document.getElementById(".questions");
+var quizQuestions = document.getElementsByClassName("questions");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
@@ -62,7 +62,7 @@ var myQuestions = [
 var secondsLeft = 30;
 var correct = 0;
 
-//When click start, time will start
+// Timer counts down 30 seconds
 function setTime() {
     var timerInterval = setInterval(function() {
         secondsLeft--;
@@ -76,15 +76,14 @@ function setTime() {
     }, 1000);
 }
 
+// trying to create a for loop for my questions
 function startQuiz() {
     setTime();
-    for (var i = 0; i < myQuestions.length; i++) {
-        myQuestions[i];
-    
-    }
+	quizQuestions.textContent = myQuestions.question;
+	console.log(myQuestions.question);
 }
 
 startBtn.addEventListener("click", function() {
-   startQuiz();
+    startQuiz();
    
 });
