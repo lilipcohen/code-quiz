@@ -13,3 +13,7 @@
 .hide {
     display: inline;
 }
+
+#submit {
+    display: none;
+}
