@@ -11,6 +11,7 @@ var submitBtn = document.getElementById("submit");
 var timeEl = document.getElementById("timer");
 var scoreDiv = document.getElementById("score");
 var gameOver = document.getElementById("game-over");
+var startOver = document.getElementById("re-start");
 
 //My questions for the quiz
 var myQuestions = [{
@@ -96,25 +97,26 @@ function checkAnswer(clickedAnswer) {
 
 	if (currentQuestionIndex >= myQuestions.length) {
 		// TODO - End the game
-		endGame()
+		endGame();
 		return
 	}
 
 	showQuestion()
 }
 
+//display end game screen
 function endGame() {
-	console.log("END")
-	// TODO - Show end game screen
+	showGameOver();
 }
 
+//resetting variables and questions
 function restartGame() {
 	secondsLeft = 50
 	currentQuestionIndex = 0
 	correct = 0
 
-	// TODO - Hide the end game screen 
-	startQuiz()
+	hideGameOver();
+	startQuiz();
 }
 
 //Displays quiz questions 
@@ -127,10 +129,11 @@ function showQuestion() {
 
 }
 
-// When quiz starts these functions are called
+// When quiz starts these functions are called, intro is hidden, timer starts
 function startQuiz() {
+	hidequizIntro ();
 	setTime();
-	showQuestion()
+	showQuestion();
 
 }
 
@@ -139,14 +142,35 @@ startBtn.addEventListener("click", function () {
 	startQuiz();
 });
 
+//Show submit button
 function showSubmitButton() {
-	document.getElementById("submit").style.display = "block"
+	document.getElementById("submit").style.display = "block";
 }
 
+//When hit submit show Game over
 submitBtn.addEventListener("click", function () {
 endGame();
 });
 
+//Show game over
+function showGameOver() {
+	document.getElementById("game-over").style.display = "block"
+}
+
+//Hide quiz intro with start button
+function hidequizIntro () {
+	document.getElementById("quiz-intro").style.display = "none";
+}
+
+//hide game over
+function hideGameOver() {
+	document.getElementById("game-over").style.display = "none";
+}
+
+//click to start over
+startOver.addEventListener("click", function () {
+	restartGame();
+	});
 
 function saveScore(initials, score) {
 	scores.push({
