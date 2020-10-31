@@ -73,7 +73,7 @@ function setTime() {
 		secondsLeft--;
 		timeEl.textContent = secondsLeft;
 
-		if (secondsLeft <= 0) {
+		if (secondsLeft <= 0 || currentQuestionIndex === myQuestions.length) {
 			clearInterval(timerInterval);
 			endGame()
 		}
