@@ -7,8 +7,10 @@ var quizQuestions = document.getElementById("questions");
 var choiceA = document.getElementById("A");
 var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
+var submitBtn = document.getElementById("submit");
 var timeEl = document.getElementById("timer");
 var scoreDiv = document.getElementById("score");
+var gameOver = document.getElementById("game-over");
 
 //My questions for the quiz
 var myQuestions = [{
@@ -59,12 +61,12 @@ var myQuestions = [{
 ];
 
 //Variables for time and score
-var secondsLeft = 30;
+var secondsLeft = 50;
 var correct = 0;
 var currentQuestionIndex = 0
 var scores = getScores()
 
-// Timer counts down 30 seconds
+// Timer counts down 50 seconds
 function setTime() {
 	var timerInterval = setInterval(function () {
 		secondsLeft--;
@@ -107,7 +109,7 @@ function endGame() {
 }
 
 function restartGame() {
-	secondsLeft = 30
+	secondsLeft = 50
 	currentQuestionIndex = 0
 	correct = 0
 
@@ -115,20 +117,24 @@ function restartGame() {
 	startQuiz()
 }
 
+//Displays quiz questions 
 function showQuestion() {
 	questionPrompt.textContent = myQuestions[currentQuestionIndex].question;
 	choiceA.textContent = myQuestions[currentQuestionIndex].answers.a;
 	choiceB.textContent = myQuestions[currentQuestionIndex].answers.b;
 	choiceC.textContent = myQuestions[currentQuestionIndex].answers.c;
+	showSubmitButton();
+
 }
 
-// trying to create a for loop for my questions
+// When quiz starts these functions are called
 function startQuiz() {
 	setTime();
 	showQuestion()
 
 }
 
+//click start button to start quiz!
 startBtn.addEventListener("click", function () {
 	startQuiz();
 });
@@ -136,6 +142,11 @@ startBtn.addEventListener("click", function () {
 function showSubmitButton() {
 	document.getElementById("submit").style.display = "block"
 }
+
+submitBtn.addEventListener("click", function () {
+endGame();
+});
+
 
 function saveScore(initials, score) {
 	scores.push({
