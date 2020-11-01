@@ -72,10 +72,13 @@ function setTime() {
 	var timerInterval = setInterval(function () {
 		secondsLeft--;
 		timeEl.textContent = secondsLeft;
-
+		//Determines End Game
 		if (secondsLeft <= 0 || currentQuestionIndex === myQuestions.length) {
 			clearInterval(timerInterval);
-			endGame()
+			endGame();
+			//fix this?
+			hideQuestions();
+			
 		}
 		console.log(timerInterval);
 	}, 1000);
@@ -85,18 +88,18 @@ function checkAnswer(clickedAnswer) {
 	var lower = clickedAnswer.toLowerCase()
 
 	if (lower === myQuestions[currentQuestionIndex].correctAnswer) {
-		// If the answer is correct
+		//If the answer is correct
 		correct++
 	} else {
-		// Otherwise
+		//Otherwise
 		secondsLeft -= 5
 	}
 
-	// TODO - Move to next question
+	//Move to next question
 	currentQuestionIndex++
 
 	if (currentQuestionIndex >= myQuestions.length) {
-		// TODO - End the game
+		//End the game
 		endGame();
 		return
 	}
@@ -127,6 +130,11 @@ function showQuestion() {
 	choiceC.textContent = myQuestions[currentQuestionIndex].answers.c;
 	showSubmitButton();
 
+}
+
+//hide questions
+function hideQuestions() {
+	document.getElementById("questionPrompt").style.display = "none";
 }
 
 // When quiz starts these functions are called, intro is hidden, timer starts
@@ -170,7 +178,12 @@ function hideGameOver() {
 //click to start over
 startOver.addEventListener("click", function () {
 	restartGame();
-	});
+});
+
+//Display your scores
+function showScores() {
+	document.getElementById("game-over").style.display = "block";}
+
 
 function saveScore(initials, score) {
 	scores.push({
