@@ -6,7 +6,7 @@ For this assignment I was to create a quiz containing questions about coding. Wh
 
 There should have been stored data with their initials and a screen that appears to reveal their score along with their initials and the previously played and stored scores as well but I did not get to that point unfortunately.
 
-![Image](Assets/Images/sh-1.png)
-![Image](Assets/Images/sh-2.png)
-![Image](Assets/Images/sh-3.png)
+![Image](Assets/images/sh-1.png)
+![Image](Assets/images/sh-2.png)
+![Image](Assets/images/sh-3.png)
 [Link](https://lilipcohen.github.io/code-quiz/)
