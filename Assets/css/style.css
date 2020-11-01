@@ -1,43 +1,43 @@
 .quiz-container {
-    margin : 20px auto;
-    background-color: white;
-    height: 400px;
-    width : 700px;
-    border-radius: 5px;
-    border-color: royalblue;
-    border-style: solid;
-    border-width: 10px;
-    position: relative;
+  margin: 20px auto;
+  background-color: white;
+  height: 400px;
+  width: 700px;
+  border-radius: 5px;
+  border-color: royalblue;
+  border-style: solid;
+  border-width: 10px;
+  position: relative;
 }
 
 .hide {
-    display: inline;
+  display: inline;
 }
 
 #submit {
-    display: none;
+  display: none;
 }
 
 #game-over {
-    display: none;
+  display: none;
 }
 
 #score {
-    display: none;
+  display: none;
 }
 
 button {
-    background-color: lightblue;
-    border-radius: 5px;
-    margin: 10px 10px 0px 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+  margin: 10px 10px 0px 10px;
 }
 
 p {
-    font-size: large;
-    font-family: 'Trebuchet MS';
+  font-size: large;
+  font-family: "Trebuchet MS";
 }
 
 h1 {
-    font-family: 'Trebuchet MS';
-    text-align: center;
+  font-family: "Trebuchet MS";
+  text-align: center;
 }
