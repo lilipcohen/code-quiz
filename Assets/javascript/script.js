@@ -12,6 +12,7 @@ var timeEl = document.getElementById("timer");
 var scoreDiv = document.getElementById("score");
 var gameOver = document.getElementById("game-over");
 var startOver = document.getElementById("re-start");
+var initialsForm = document.getElementById("enter-initials");
 
 //My questions for the quiz
 var myQuestions = [{

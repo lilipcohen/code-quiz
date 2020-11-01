@@ -25,3 +25,19 @@
 #score {
     display: none;
 }
+
+button {
+    background-color: lightblue;
+    border-radius: 5px;
+    margin: 10px 10px 0px 10px;
+}
+
+p {
+    font-size: large;
+    font-family: 'Trebuchet MS';
+}
+
+h1 {
+    font-family: 'Trebuchet MS';
+    text-align: center;
+}
